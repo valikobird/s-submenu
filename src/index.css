@@ -51,3 +51,244 @@ ul {
 }
 
 /* ============= PROJECT CSS =============== */
+
+body {
+  background-color: #6366f1;
+}
+
+/* ============= Navbar =============== */
+
+nav {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .nav-center {
+    width: 90vw;
+    max-width: 1120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      text-transform: none;
+      color: white;
+      letter-spacing: 3px;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    .toggle-btn {
+      width: 2rem;
+      height: 2rem;
+      background-color: white;
+      color: #4338ca;
+      border-radius: 4px;
+      border-color: transparent;
+      transition: 0.3s ease-in-out all;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .toggle-btn {
+    display: none;
+  }
+}
+
+/* ============= Navbar =============== */
+
+.hero-container {
+  min-height: calc(100vh - 5rem);
+  display: grid;
+  place-items: center;
+
+  .hero-center {
+    color: white;
+    width: 90vw;
+    max-width: 1120px;
+
+    h1 {
+      font-size: clamp(3rem, 5vw, 5rem);
+      margin-bottom: 1rem;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .hero-center {
+    text-align: center;
+
+    p {
+      max-width: 35rem;
+      margin: 0 auto;
+    }
+  }
+}
+
+/* ============= Sidebar =============== */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0;
+  visibility: hidden;
+
+  &.show-sidebar {
+    opacity: 1;
+    visibility: visible;
+    transition-property: opacity;
+    transition-duration: 0.3s;
+  }
+
+  .sidebar-container {
+    padding: 4rem 2rem;
+    position: relative;
+
+    .close-btn {
+      font-size: 2rem;
+      background-color: transparent;
+      border-color: transparent;
+      color: #6366f1;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      cursor: pointer;
+    }
+
+    article {
+      margin-bottom: 2rem;
+
+      h4 {
+        margin-bottom: 1rem;
+        color: #4338ca;
+        font-size: 1.563rem;
+      }
+
+      .sidebar-sublinks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 0.5rem;
+
+        a {
+          display: block;
+          color: #0f172a;
+          text-transform: capitalize;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          svg {
+            color: #64748b;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* ============= Nav Links =============== */
+
+.nav-links {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  nav .nav-center {
+    align-self: stretch;
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-self: stretch;
+
+    .nav-link {
+      padding: 0 1rem;
+      color: white;
+      background-color: transparent;
+      border-color: transparent;
+      font-size: 1.25rem;
+      text-transform: capitalize;
+      letter-spacing: 1px;
+      cursor: pointer;
+    }
+  }
+}
+
+/* ============= Submenu =============== */
+
+.submenu {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .submenu {
+    display: block;
+    position: fixed;
+    top: 5rem;
+    left: 50%;
+    width: 90vw;
+    max-width: 1120px;
+    background-color: white;
+    padding: 2rem;
+    transform: rotateX(-90deg) translateX(-50%);
+    transform-origin: top;
+    perspective: 1000px;
+    visibility: hidden;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    border-radius: 4px;
+    z-index: -1;
+
+    &.show-submenu {
+      visibility: visible;
+      opacity: 1;
+      transform: rotate(0deg) translateX(-50%);
+      z-index: 10;
+    }
+
+    h5 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #4338ca;
+    }
+
+    .submenu-links {
+      display: grid;
+      row-gap: 0.5rem;
+
+      a {
+        color: #0f172a;
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+}

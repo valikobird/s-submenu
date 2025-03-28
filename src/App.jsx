@@ -1,5 +1,14 @@
+import { Hero, Navbar, Sidebar, Submenu } from './components';
+
 const App = () => {
-  return <h2>Submenu</h2>;
+  return (
+    <main>
+      <Navbar />
+      <Hero />
+      <Sidebar />
+      <Submenu />
+    </main>
+  );
 };
 
 export default App;
